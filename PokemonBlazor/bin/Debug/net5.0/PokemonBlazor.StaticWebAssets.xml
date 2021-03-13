@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\Junior Gervacio\Desktop\Github\PokemonWork\Pokemon\PokemonBlazor\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\Junior Gervacio\Desktop\Github\PokemonWork\Pokemon\PokemonBlazor\obj\Debug\net5.0\scopedcss\bundle\" />
+</StaticWebAssets>
