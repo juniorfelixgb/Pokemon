@@ -25,7 +25,4 @@ BUnit <br />
 
 <p>Hay vistas detalle del diseño en su perfil de Instagram <a href="https://www.instagram.com/p/Bx_QWxThmmb/?utm_source=ig_web_copy_link">aquí</a> y un ejemplo de animaciones que se pueden implementar <a href="https://www.instagram.com/p/ByElEIABvoj/?utm_source=ig_web_copy_link">aquí</a>.</p>
 
-#
-#
-#
 # Gracias.
