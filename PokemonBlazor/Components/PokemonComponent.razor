@@ -1,0 +1,27 @@
+<div class="pokemon" style="background-color: @Color">
+    <div class="information">
+        <span>@Name</span>
+        @if (Types.Any())
+        {
+            @foreach (var type in Types)
+            {
+                <span>@type</span>
+            }
+        }
+        else
+        {
+            <span>No tiene</span>
+        }
+    </div>
+    <div class="image">
+        <span># @Number</span>
+        <img src="#" alt="@Name" loading="lazy" />
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Name { get; set; }
+    [Parameter] public string Number { get; set; }
+    [Parameter] public string[] Types { get; set; }
+    [Parameter] public string Color { get; set; }
+}

@@ -1,0 +1,14 @@
+<div class="content" style="background-color: @Background">
+    <div class="title">
+        <span>@Title</span>
+    </div>
+    <div class="image">
+        <img src="images/pokemon_logo.png" alt="back-log" loading="lazy" />
+    </div>
+</div>
+
+
+@code {
+    [Parameter] public string Background { get; set; } = "";
+    [Parameter] public string Title { get; set; }
+}

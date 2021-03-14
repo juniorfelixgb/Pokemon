@@ -1,0 +1,52 @@
+.example-scroll-to-top-visible {
+    font-size: 20px;
+    transition: all 1s;       
+    bottom: 10px;
+    left:8px;
+}
+.example-scroll-to-top-hidden {       
+    visibility: hidden;
+    transition: all 1s;
+    bottom:10px;
+    left:-100%;
+}
+
+.example-custom-button {
+    padding: 12px 24px;
+    border-radius: 4px;
+    background-color: #ff9800;
+    box-shadow: var(--mud-elevation-24);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+    flex-wrap: nowrap;
+}
+
+@media (min-width: 890px) {
+    .mud-container {
+        width: 980px;
+    }
+    .content {
+        flex-direction: row;
+        margin: 0 15%;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 1200px) {
+    .content {
+        margin: 0 15%;       
+    }
+}
+
+@media (min-width: 1400px) {
+    .content {
+        flex-direction: row;
+        width: 700px;
+        margin: 0 26%;
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,18 @@
+.pokemon {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 85px;
+    border-radius: 10px;
+    color: #fff;
+    margin: 0 auto;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 15px;
+    -webkit-box-shadow: 5px 5px 15px -3px #000000; 
+    box-shadow: 5px 5px 15px -3px #000000;
+}
+
+.pokemon .information {
+    flex-direction: row;
+}

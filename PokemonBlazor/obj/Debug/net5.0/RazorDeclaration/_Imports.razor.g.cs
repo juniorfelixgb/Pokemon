@@ -70,21 +70,28 @@ using Microsoft.JSInterop;
 #nullable disable
 #nullable restore
 #line 9 "C:\Users\Junior Gervacio\Desktop\Github\PokemonWork\Pokemon\PokemonBlazor\_Imports.razor"
-using PokemonBlazor;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 10 "C:\Users\Junior Gervacio\Desktop\Github\PokemonWork\Pokemon\PokemonBlazor\_Imports.razor"
-using PokemonBlazor.Shared;
+using MudBlazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 11 "C:\Users\Junior Gervacio\Desktop\Github\PokemonWork\Pokemon\PokemonBlazor\_Imports.razor"
-using MudBlazor;
+using PokemonBlazor;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "C:\Users\Junior Gervacio\Desktop\Github\PokemonWork\Pokemon\PokemonBlazor\_Imports.razor"
+using PokemonBlazor.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\Junior Gervacio\Desktop\Github\PokemonWork\Pokemon\PokemonBlazor\_Imports.razor"
+using PokemonBlazor.Components;
 
 #line default
 #line hidden
