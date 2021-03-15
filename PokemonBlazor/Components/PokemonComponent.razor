@@ -1,21 +1,21 @@
 <div class="pokemon" style="background-color: @Color">
-    <div class="information">
-        <span>@Name</span>
-        @if (Types.Any())
-        {
-            @foreach (var type in Types)
-            {
-                <span>@type</span>
-            }
-        }
-        else
-        {
-            <span>No tiene</span>
-        }
+    <div class="poke-header">
+        <h2 class="poke-title">@Name</h2>
+        <p class="poke-number">#@Number</p>
     </div>
-    <div class="image">
-        <span># @Number</span>
-        <img src="#" alt="@Name" loading="lazy" />
+    <div class="poke-information">
+        <div class="poke-type">
+            @if (Types.Any()) {
+                @foreach (var type in Types)
+                {
+                    <p class="poke-badge-type">@type</p>
+                }
+            }
+            else {
+                <p class="poke-badge-type">No Tiene</p>
+            }
+        </div>
+        <img class="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" alt="" />
     </div>
 </div>
 
