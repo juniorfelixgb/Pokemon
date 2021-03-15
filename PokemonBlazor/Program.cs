@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MudBlazor.Services;
+using PokemonBlazor.Services;
 
 namespace PokemonBlazor
 {
@@ -20,6 +21,8 @@ namespace PokemonBlazor
             builder.Services.AddMudServices();
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddHttpClient("pokeapi", client => { client.BaseAddress = new Uri("https://pokeapi.co/api/v2/"); });
+            builder.Services.AddTransient<IPokemonService, PokemonService>();
 
             await builder.Build().RunAsync();
         }

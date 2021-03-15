@@ -1,27 +1,37 @@
-<div class="pokemon" style="background-color: @Color">
-    <div class="poke-header">
-        <h2 class="poke-title">@Name</h2>
-        <p class="poke-number">#@Number</p>
-    </div>
-    <div class="poke-information">
-        <div class="poke-type">
-            @if (Types.Any()) {
-                @foreach (var type in Types)
-                {
-                    <p class="poke-badge-type">@type</p>
-                }
-            }
-            else {
-                <p class="poke-badge-type">No Tiene</p>
-            }
+@inject IPokemonService _pokemon
+
+@if (Pokemons == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    @foreach (var poke in Pokemons)
+    {
+        <div class="pokemon" style="background-color: green">
+            <div class="poke-header">
+                <h2 class="poke-title">@poke.name</h2>
+                <p class="poke-number">#@PokemonNumber</p>
+            </div>
+            @* <div class="poke-information">
+                <div class="poke-type">
+                    @if (Types.Any()) {
+                        @foreach (var type in Types)
+                        {
+                            <p class="poke-badge-type">@type</p>
+                        }
+                    }
+                    else {
+                        <p class="poke-badge-type">No Tiene</p>
+                    }
+                </div>
+                <img class="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" alt="" />
+            </div> *@
         </div>
-        <img class="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" alt="" />
-    </div>
-</div>
+    }
+}
 
 @code {
-    [Parameter] public string Name { get; set; }
-    [Parameter] public string Number { get; set; }
-    [Parameter] public string[] Types { get; set; }
-    [Parameter] public string Color { get; set; }
+    [Parameter] public List<Result> Pokemons { get; set; }
+    [Parameter] public int PokemonNumber { get; set; }
 }

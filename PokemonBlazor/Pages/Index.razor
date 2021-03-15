@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject IPokemonService _pokemon
 
 <MudContainer Fixed="true">
     <MudCard>
@@ -11,7 +12,7 @@
             </MudText>
             <MudItem xs="12" sm="12" md="12">
                 <MudTextField @bind-Value="Search" Label="Search" Variant="Variant.Outlined" Adornment="Adornment.End"
-                    AdornmentIcon="@Icons.Filled.Search" AdornmentColor="Color.Primary" Class="pl-5 pr-5" />
+                    AdornmentIcon="Icons.Filled.Search" AdornmentColor="Color.Primary" Class="pl-5 pr-5" />
             </MudItem>
             <div class="content">
                 <div class="option-container">
@@ -26,27 +27,35 @@
         </MudForm>
     </MudCard>
     <MudCard Style="background-color: #e2e8f0;">
-        <MudItem>
+        @* <MudItem>
             <MudText Typo="Typo.h4" Class="pt-5" Align="Align.Center">Pokedex</MudText>
-        </MudItem>
+        </MudItem> *@
         <div class="poke-container">
             <h2 class="poke-content-header">Pokedex</h2>
             <div class="poke-content">
-                <PokemonComponent Name="Bulbasaur" Types="types" Number="001" Color="green" />
-                <PokemonComponent Name="Bulbasaur" Types="types" Number="001" Color="green" />
+                <PokemonComponent Pokemons="_pokemon.Pokemon.results" 
+                                  PokemonNumber="_pokemon.PokemonInfo.id" />
             </div>
         </div>
     </MudCard>
 </MudContainer>
 
-@code{
+@code {
     private string Search { get; set; }
     bool success;
     string[] errors = { };
     MudForm form;
     Color Color = Color.Success;
     string[] types = { "grass", "poison" };
-
+    protected override async Task OnInitializedAsync()
+    {
+        _pokemon.Pokemon = await _pokemon.GetPokemons(0, 10);
+        for (int i = 1; i < _pokemon.Pokemon.results.Count; i++)
+        {
+            int pokemonCount = i;
+            _pokemon.PokemonInfo = await _pokemon.GetPokemon(pokemonCount);
+        }
+    }
     private void OnScroll(ScrollEventArgs e)
     {
         Color = (e.FirstChildBoundingClientRect.Top * -1) switch
