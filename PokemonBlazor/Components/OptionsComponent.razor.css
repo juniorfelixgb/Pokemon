@@ -50,34 +50,46 @@
   transition: all 0.3s ease;
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .poke-option {
+    position: relative;
+    color: #eee;
+  }
 
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px){
-    .poke-option{
-        background: url('images/pokeball.svg');
-        background-repeat: repeat;
-        background-size: cover;
-        color: #eee;
-        opacity: 0.6;
-    }
+  .poke-option::before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background-image: url('images/silhouette-pikachu-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+    background-position: 50% 0;
+  }
 
-    .logo-img {
-        display: none;
-        opacity: 1;
-    }
+  .logo-img {
+    display: none;
+    opacity: 1;
+  }
 
-    .info-col {
-        width: 100%;
-        opacity: 1;
-    }
-    .pika {
-        display: none;
-        opacity: 1;
-    }
+  .info-col {
+    width: 100%;
+    opacity: 1;
+  }
+  .pika {
+    display: none;
+    opacity: 1;
+  }
 
-    .poke-title{ 
-        text-align: center;
-        opacity: 1;
-    }
+  .poke-title {
+    z-index: 5;
+    text-align: center;
+    opacity: 1;
+    font-size: 1.01rem;
+  }
 }
