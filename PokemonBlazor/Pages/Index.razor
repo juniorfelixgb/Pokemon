@@ -1,60 +1,39 @@
 ﻿@page "/"
 
 <MudContainer Fixed="true">
-        <MudCard>
-            <MudForm @ref="form" @bind-IsValid="@success" @bind-Errors="@errors" class="mt-5">
-                <MudScrollToTop TopOffset="100" Style="z-index:2001" VisibleCssClass="example-scroll-to-top-visible"
-                    HiddenCssClass="example-scroll-to-top-hidden " Selector="#another_unique_identifier">
-                </MudScrollToTop>
-                <MudText Typo="Typo.h4" Class="pt-5" Align="Align.Center">
-                    Que pokémon estas buscando?
-                </MudText>
-                <MudItem xs="12" sm="12" md="12">
-                    <MudTextField @bind-Value="Search" Label="Search" Variant="Variant.Outlined"
-                        Adornment="Adornment.End" AdornmentIcon="@Icons.Filled.Search" AdornmentColor="Color.Primary"
-                        Class="pl-5 pr-5" />
-                </MudItem>
-                <div class="content">
-                    <div class="pt-3 pr-3">
-                        <OptionsComponent Title="Pokedex" Background="#47cfaf" />
-                    </div>
-                    <div class="pt-3 pr-3">
-                        <OptionsComponent Title="Buscar Movimientos" Background="#74bdfd" />
-                    </div>
-                    <div class="pt-3 pr-3">
-                        <OptionsComponent Title="Buscar Pokemon" Background="#aa5da1" />
-                    </div>
-                    <div class="pt-3 pr-3">
-                        <OptionsComponent Title="Quien es este pokemon?" Background="#fb6d6c" />
-                    </div>
-                    <div class="pt-3 pr-3">
-                        <OptionsComponent Title="Tipos de combinacion" Background="#d3b54a" />
-                    </div>
-                    <div class="pt-3 pr-3 pb-2">
-                        <OptionsComponent Title="Contribuidores" Background="#b1746d" />
-                    </div>
-                </div>
-            </MudForm>
-        </MudCard>
-        <MudCard Style="background-color: #e2e8f0; margin-radius-top: 3px;">
-            <MudItem>
-                <MudText Typo="Typo.h4" Class="pt-5" Align="Align.Center">Pokedex</MudText>
+    <MudCard>
+        <MudForm @ref="form" @bind-IsValid="@success" @bind-Errors="@errors" class="mt-5">
+            <MudScrollToTop TopOffset="100" Style="z-index:2001" VisibleCssClass="example-scroll-to-top-visible"
+                HiddenCssClass="example-scroll-to-top-hidden " Selector="#another_unique_identifier">
+            </MudScrollToTop>
+            <MudText Typo="Typo.h4" Class="pt-5" Align="Align.Center">
+                Que pokémon estas buscando?
+            </MudText>
+            <MudItem xs="12" sm="12" md="12">
+                <MudTextField @bind-Value="Search" Label="Search" Variant="Variant.Outlined" Adornment="Adornment.End"
+                    AdornmentIcon="@Icons.Filled.Search" AdornmentColor="Color.Primary" Class="pl-5 pr-5" />
             </MudItem>
             <div class="content">
-                <div class="pt-3 pr-3">
-                    <PokemonComponent Name="Bulbasaur"
-                                    Types="types"
-                                    Number="001"
-                                    Color="green" />
-                </div>
-                <div class="pt-3 pr-3">
-                    <PokemonComponent Name="Bulbasaur"
-                                    Types="types"
-                                    Number="001"
-                                    Color="green" />
+                <div class="option-container">
+                    <OptionsComponent Title="Pokedex" Background="#47cfaf" />
+                    <OptionsComponent Title="Buscar Movimientos" Background="#74bdfd" />
+                    <OptionsComponent Title="Buscar Pokemon" Background="#aa5da1" />
+                    <OptionsComponent Title="Quien es este pokemon?" Background="#fb6d6c" />
+                    <OptionsComponent Title="Tipos de combinacion" Background="#d3b54a" />
+                    <OptionsComponent Title="Contribuidores" Background="#b1746d" />
                 </div>
             </div>
-        </MudCard>
+        </MudForm>
+    </MudCard>
+    <MudCard Style="background-color: #e2e8f0; margin-radius-top: 9px;">
+        <div class="poke-container">
+            <h2 class="poke-content-header">Pokedex</h2>
+            <div class="poke-content">
+                <PokemonComponent Name="Bulbasaur" Types="types" Number="001" Color="green" />
+                <PokemonComponent Name="Bulbasaur" Types="types" Number="001" Color="green" />
+            </div>
+        </div>
+    </MudCard>
 </MudContainer>
 
 @code{
